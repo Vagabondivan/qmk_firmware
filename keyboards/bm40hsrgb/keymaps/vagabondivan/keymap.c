@@ -14,12 +14,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #include QMK_KEYBOARD_H
-#include "eeprom.h"
-#include "keymap_german.h"
-#include "keymap_french.h"
-#include "keymap_italian.h"
-#include "keymap_spanish.h"
-#include "keymap_jp.h"
 
 // Layer Names
 enum layers {
@@ -574,4 +568,3 @@ void keyboard_post_init_user(void) {
 //  debug_keyboard=true;                // Debug Keyboard
 //  debug_mouse=true;                   // Debug Mouse
 };
-

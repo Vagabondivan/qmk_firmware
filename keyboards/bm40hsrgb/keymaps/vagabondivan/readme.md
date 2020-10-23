@@ -1,21 +1,13 @@
-# bm40hsrgb
+# Vagabondivan keymap for bm40hsrgb
 
-![BM40 RGB](https://rgoulter.com/images/keyboards/bm40rgb/bm40rgb_large.jpg)
+- Keyboard lights up when connected and when activating layers.
 
-An ortholinear 40% hotswap keyboard with per-key RGB in-switch LEDs and RGB Backlighting, from KP Republic.
+- QWERTY + GAMING (Retropie and MAME) + NUMPAD
 
-This firmware was originally taken from a kbfirmware.json and manually converted. You may find the original `.json` files [here](https://drive.google.com/drive/folders/1tlTHQIFcluK2mjZ4UbbKCsdRLgSRSPw6).
+- RGB Light + Numbers and Symbols + Accented Letters (customize as you like with others).
 
-* Keyboard Maintainer: [rgoulter](https://github.com/rgoulter)
-* Hardware Supported: bm40hsrgb PCB
-* Hardware Availability: [KPRepublic](https://www.aliexpress.com/item/4001147779116.html)
+- ADJUST layer (press LOWER and RAISE together) to switch between first 3 layers and to put the pcb in FLASH mode.
 
-Make example for this keyboard (after setting up your build environment):
+- TAP DANCE to switch on/off CAPSLOCK led (double tap left shift)
 
-    make bm40hsrgb:default
-
-Flashing example for this keyboard:
-
-    make bm40hsrgb:default:flash
-
-See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_tools) and the [make instructions](https://docs.qmk.fm/#/getting_started_make_guide) for more information. Brand new to QMK? Start with our [Complete Newbs Guide](https://docs.qmk.fm/#/newbs).
+- TAP DANCE for Opening/Closing parenthesis/brackets: 1 TAP Parenthesis, 2 TAPs Square Brackets, 3 TAPs Curly Brackets
