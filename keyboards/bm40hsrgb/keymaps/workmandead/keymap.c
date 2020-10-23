@@ -14,12 +14,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #include QMK_KEYBOARD_H
-#include "eeprom.h"
-#include "keymap_german.h"
-#include "keymap_french.h"
-#include "keymap_italian.h"
-#include "keymap_spanish.h"
-#include "keymap_jp.h"
 
 #define KC_MAC_UNDO LGUI(KC_Z)
 #define KC_MAC_CUT LGUI(KC_X)
