@@ -4,7 +4,7 @@
 
 - QWERTY + GAMING (Retropie and MAME)
 
-- Numbers and Symbols + Accented Letters (customize as you like with others).
+- Numbers and Symbols + Accented Letters + email address, signature and disclaimer (customize as you like).
 
 - RGB Light, RGB Matrix fx, RGB underglow. 
 
