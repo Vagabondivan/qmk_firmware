@@ -4,7 +4,7 @@
 
 - Numbers and Symbols + Accented Letters + email address, signature and disclaimer (customize as you like).
 
-- RGB Light, RGB Matrix underglow. 
+- RGB Matrix underglow. 
 
 - ADJUST layer (press LOWER and RAISE together) to switch between first 2 layers and to put the pcb in FLASH mode.
 
