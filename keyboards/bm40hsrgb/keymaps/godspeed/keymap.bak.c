@@ -19,7 +19,8 @@
 enum custom_layers {
     _QWERTY,
     _RETROPIE,
-    _PROGRAM,
+    _SPACECADET,
+    _FN,
     _LOWER,
     _RAISE,
     _ADJUST,
@@ -29,9 +30,9 @@ enum custom_layers {
 // Custom keycodes
 enum custom_keycodes {
     QWERTY = SAFE_RANGE,
-    QWERTY2,
     RETROPIE,
-    PROGRAM,
+    SPACECADET,
+    FN,
     LOWER,
     RAISE,
     RGB_SLD1,
@@ -62,100 +63,117 @@ enum tapdance {
 // LAYOUTS SECTION     **************************************************************
 //
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+
 [_QWERTY] = LAYOUT_planck_mit(
 /*-----------------------------------------------------------------------------------.
- | ESC  |   Q  |   W  |   E  |   R  |   T  |   Y  |   U  |   I  |   O  |   P  | Bksp |
+ | TAB  |   Q  |   W  |   E  |   R  |   T  |   Y  |   U  |   I  |   O  |   P  | Bksp |
  |------+------+------+------+------+------+------+------+------+------+------+------|
- | TAB  |   A  |   S  |   D  |   F  |   G  |   H  |   J  |   K  |   L  |   ;  |  "   |
+ | ESC~ |   A  |   S  |   D  |   F  |   G  |   H  |   J  |   K  |   L  |   ;  | Del  |
  |------+------+------+------+------+------+------+------+------+------+------+------|
- | LSFT |   Z  |   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |  UP  | ENTER|
+ | LSFT |   Z  |   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |   /  | ENTR |
  |------+------+------+------+------+------+------+------+------+------+------+------|
- |PROGRM| LCTL | LALT | GUI\ |LOWER |    Space    | RAISE|   /  | LEFT | DOWN | RGHT |
+ |  FN  | LCTL | LALT | LGUI |LOWER |    Space    | RAISE| LEFT | DOWN |  UP  | RGHT |
  `-----------------------------------------------------------------------------------*/
-    KC_ESC,     KC_Q,     KC_W,     KC_E,             KC_R,   KC_T,    KC_Y,   KC_U,   KC_I,     KC_O,     KC_P,     KC_BSPC,
-    KC_TAB,     KC_A,     KC_S,     KC_D,             KC_F,   KC_G,    KC_H,   KC_J,   KC_K,     KC_L,     KC_SCLN,  KC_QUOTE,
-    TD(CPSLK),  KC_Z,     KC_X,     KC_C,             KC_V,   KC_B,    KC_N,   KC_M,   KC_COMM,  KC_DOT,   KC_UP,    KC_ENT,
-    PROGRAM,    KC_LCTL,  KC_LALT,  LGUI_T(KC_BSLS),  LOWER,      KC_SPC,      RAISE,  KC_SLSH,  KC_LEFT,  KC_DOWN,  KC_RGHT
+    KC_TAB,     KC_Q,     KC_W,     KC_E,     KC_R,   KC_T,    KC_Y,   KC_U,   KC_I,     KC_O,     KC_P,     KC_BSPC,
+    KC_GESC,    KC_A,     KC_S,     KC_D,     KC_F,   KC_G,    KC_H,   KC_J,   KC_K,     KC_L,     KC_SCLN,  KC_DEL,
+    TD(CPSLK),  KC_Z,     KC_X,     KC_C,     KC_V,   KC_B,    KC_N,   KC_M,   KC_COMM,  KC_DOT,   KC_SLSH,  KC_ENT,
+    FN,         KC_LCTL,  KC_LALT,  KC_LGUI,  LOWER,      KC_SPC,      RAISE,  KC_LEFT,  KC_DOWN,  KC_UP,    KC_RGHT
 ),
 
 [_RETROPIE] = LAYOUT_planck_mit(
 /*-----------------------------------------------------------------------------------.
- | CANC |      |      |      |      |      |      |      |      |      |   X  |   A  |
+ | CANC |      |  W   |      |      |      |      |      |   I  |      |   X  |   A  |
  |------+------+------+------+------+------+------+------+------+------+------+------|
- | MENU |      |      |      |      |      |      |      |      |      |   Y  |   B  |
+ | TAB  |  A   |  S   |  D   |      |      |      |   J  |   K  |   L  |   Y  |   B  |
  |------+------+------+------+------+------+------+------+------+------+------+------|
- | SLCT |      | LSld | LTrg | LTmb |      |      | RTmb | RTrg | RSld |  UP  | STRT |
+ |SELECT|  Z   |  X   |  C   |  V   |      |   N  |   M  |   ,  |   .  |  UP  | STRT |
  |------+------+------+------+------+------+------+------+------+------+------+------|
- |      | FIRE | JUMP | COIN |LOWER |    Space    | RAISE| PLY1 | LEFT | DOWN | RGHT |
- '-----------------------------------------------------------------------------------*/
-    KC_ESC,   KC_NO,    KC_NO,    KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,    KC_NO,    KC_RBRC,  KC_ENT,
-    KC_TAB,   KC_NO,    KC_NO,    KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,    KC_NO,    KC_LBRC,  KC_QUOT,
-    KC_LSFT,  KC_NO,    KC_X,     KC_C,   KC_V,   KC_NO,  KC_NO,  KC_M,   KC_COMM,  KC_DOT,   KC_UP,    KC_RSFT,
-    KC_NO,    KC_LCTL,  KC_LALT,  KC_5,   LOWER,      KC_SPC,     RAISE,  KC_1,     KC_LEFT,  KC_DOWN,  KC_RGHT
+ |  HOT | LCTL | LALT | LCTL |LOWER |   PLAYER 1  | RAISE| COIN | LEFT |  DN  | RGHT |
+ `-----------------------------------------------------------------------------------*/
+    KC_TAB,   KC_NO,    KC_W,     KC_NO,    KC_NO,  KC_NO,   KC_NO,  KC_NO,  KC_I,     KC_NO,    KC_NO,    KC_ENT,
+    KC_GESC,  KC_A,     KC_S,     KC_D,     KC_NO,  KC_NO,   KC_NO,  KC_J,   KC_K,     KC_L,     KC_SCLN,  KC_NO,
+    KC_LSFT,  KC_Z,     KC_X,     KC_C,     KC_V,   KC_NO,   KC_N,   KC_M,   KC_COMM,  KC_DOT,   KC_UP,    KC_RSFT,
+    KC_LSFT,  KC_LCTL,  KC_LALT,  KC_LCTL,  LOWER,       KC_1,       RAISE,  KC_5,     KC_LEFT,  KC_DOWN,  KC_RGHT
 ),
 
-[_PROGRAM] = LAYOUT_planck_mit(
+[_SPACECADET] = LAYOUT_planck_mit(
+/*-----------------------------------------------------------------------------------.
+ | TAB  |   Q  |   W  |   E  |   R  |   T  |   Y  |   U  |   I  |   O  |   P  | Bksp |
+ |------+------+------+------+------+------+------+------+------+------+------+------|
+ | ESC~ |   A  |   S  |   D  |   F  |   G  |   H  |   J  |   K  |   L  |   ;  | Del  |
+ |------+------+------+------+------+------+------+------+------+------+------+------|
+ | LSFT |   Z  |   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |   /  | ENTR |
+ |------+------+------+------+------+------+------+------+------+------+------+------|
+ |  FN  | LCTL | LALT | LGUI |LOWER |    Space    | RAISE| LEFT | DOWN |  UP  | RGHT |
+ `-----------------------------------------------------------------------------------*/
+    KC_TAB,     KC_Q,     KC_W,     KC_E,     KC_R,   KC_T,    KC_Y,   KC_U,   KC_I,     KC_O,     KC_P,     KC_BSPC,
+    KC_GESC,    KC_A,     KC_S,     KC_D,     KC_F,   KC_G,    KC_H,   KC_J,   KC_K,     KC_L,     KC_SCLN,  KC_DEL,
+    TD(CPSLK),  KC_Z,     KC_X,     KC_C,     KC_V,   KC_B,    KC_N,   KC_M,   KC_COMM,  KC_DOT,   KC_SLSH,  KC_ENT,
+    FN,         KC_LCTL,  KC_LALT,  KC_LGUI,  LOWER,      KC_SPC,      RAISE,  KC_LEFT,  KC_DOWN,  KC_UP,    KC_RGHT
+),
+
+[_FN] = LAYOUT_planck_mit(
 /*-----------------------------------------------------------------------------------.
  |      |PRNSCR|PRNSEL|  è   |      | MAIL |   €  |  ù   |  ì   |  ò   |MSW UP|  DEL |
  |------+------+------+------+------+------+------+------+------+------+------+------|
- | ALT` |  à   | SIG  |      | FISH |      | HOME | PGDN | PGUP | END  |MSW DN|OSL(6)|
+ | ALT` |  à   | SIG  |      | FISH |      | HOME | PGDN | PGUP | END  |MSW DN|OSL(7)|
  |------+------+------+------+------+------+------+------+------+------+------+------|
  | ALTe |      |      |      |      |      |   ñ  |      |      | MSBL | MS U | MSBR |
  |------+------+------+------+------+------+------+------+------+------+------+------|
  |      |      |      |      |      |             |      |   ¿  | MS L | MS D | MS R |
  `-----------------------------------------------------------------------------------*/
     KC_NO,         SGUI(KC_3),  SGUI(KC_4),  GRAVEE,  KC_NO,    MAIL,   EURO,     GRAVEU,   GRAVEI,   GRAVEO,      KC_WH_U,     KC_DEL,
-    LALT(KC_GRV),  GRAVEA,      SIG,         KC_NO,   FISH,     KC_NO,  KC_HOME,  KC_PGDN,  KC_PGUP,  KC_END,      KC_WH_D,     OSL(6),
+    LALT(KC_GRV),  GRAVEA,      SIG,         KC_NO,   FISH,     KC_NO,  KC_HOME,  KC_PGDN,  KC_PGUP,  KC_END,      KC_WH_D,     OSL(7),
     LALT(KC_E),    KC_NO,       KC_NO,       KC_NO,   KC_NO,    KC_NO,  SPAIN1,   KC_NO,    KC_WH_D,  KC_MS_BTN1,  KC_MS_UP,    KC_MS_BTN2,
     KC_NO,         KC_NO,       KC_NO,       KC_NO,   KC_TRNS,      KC_TRNS,      KC_TRNS,  SPAIN2,   KC_MS_LEFT,  KC_MS_DOWN,  KC_MS_RIGHT
 ),
 
 [_LOWER] = LAYOUT_planck_mit(
 /*-----------------------------------------------------------------------------------.
- |      |BW-RGB| PREV | PLAY | NEXT | BRID | BRIU | VOL- | MUTE | VOL+ |RGBTOG|      |
+ |   \  |   !  |   "  |   €  |   $  |   %  |   &  |   _  | ([{  |  }]) |   =  |   '  |
+ |------+------+------+------+------+------+------+------+------+------+------+------|
+ |   |  |      |      |      |      |      |      |      |      |      |   *  |   +  |
+ |------+------+------+------+------+------+------+------+------+------+------+------|
+ |   ^  |      |      |      |      |      |      |      |      |      |   /  |   -  |
+ |------+------+------+------+------+-------------+------+------+------+------+------|
+ |      |      |      |      |      |             |      | HOME | PGDN | PGUP | END  |
+ `-----------------------------------------------------------------------------------*/
+    KC_BSLS,  KC_EXLM,  KC_QUOT,  EURO,   KC_DLR,   KC_PERC,  KC_AMPR,  KC_UNDS,  TD(OPNBR),  TD(CLSBR),  KC_EQL,   KC_QUOT,
+    KC_PIPE,  KC_NO,    KC_NO,    KC_NO,  KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,      KC_NO,      KC_ASTR,  KC_PPLS,
+    KC_CIRC,  KC_NO,    KC_NO,    KC_NO,  KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,      KC_NO,      KC_NO,    KC_PMNS,
+    KC_NO,    KC_NO,    KC_NO,    KC_NO,  KC_TRNS,        KC_TRNS,      KC_TRNS,  KC_HOME,    KC_PGDN,    KC_PGUP,  KC_END
+),
+
+[_RAISE] = LAYOUT_planck_mit(
+/*-----------------------------------------------------------------------------------.
+ |      |      |      |      |      |      |      |      |      |      |      |      |
+ |------+------+------+------+------+------+------+------+------+------+------+------|
+ |      |      |      |      |      |      |      |      |      |   @  |   #  |      |
  |------+------+------+------+------+------+------+------+------+------+------+------|
  |      |      |      |      |      |      |      |      |      |      |      |      |
+ |------+------+------+------+------+-------------+------+------+------+------+------|
+ |      |      |      |      |      |             |      |      |      |      |      |
+ `-----------------------------------------------------------------------------------*/
+    KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,    KC_NO,  KC_NO,  KC_NO,    KC_NO,  KC_NO,  KC_NO,    KC_NO,
+    KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,    KC_NO,  KC_NO,  KC_NO,    KC_NO,  KC_AT,  KC_HASH,  KC_COLN,
+    KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,    KC_NO,  KC_NO,  KC_NO,    KC_NO,  KC_NO,  KC_NO,    KC_NO,
+    KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_TRNS,     KC_TRNS,     KC_TRNS,  KC_NO,  KC_NO,  KC_NO,    KC_NO
+),
+
+[_ADJUST] = LAYOUT_planck_mit(
+/*-----------------------------------------------------------------------------------.
+ |      |BW-RGB| PREV | PLAY | NEXT | BRID | BRIU | VOL- | MUTE | VOL+ |RGBTOG|QWERTY|
+ |------+------+------+------+------+------+------+------+------+------+------+------|
+ |SCADET|      |      |      |      |      |      |      |      |      |      |RETPIE|
  |------+------+------+------+------+------+------+------+------+------+------+------|
  | BRI+ | SAT+ | HUE+ |      |      |      |      |      |      | MNXS | MOD+ | HMAP |
  |------+------+------+------+------+------+------+------+------+------+------+------|
  | BRI- | SAT- | HUE- |      |      | KNIGHTRIDER |      |      | SPD- | MOD- | SPD+ |
  `-----------------------------------------------------------------------------------*/
-    KC_NO,    RGB_SLD1,  KC_MPRV,  KC_MPLY,  KC_MNXT,   KC_BRID,  KC_BRIU,  KC_VOLD,  KC_MUTE,  KC_VOLU,  RGB_SLD2,  KC_NO,
-    KC_NO,    KC_NO,     KC_NO,    KC_NO,    KC_NO,     KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,     KC_NO,
-    RGB_VAI,  RGB_SAI,   RGB_HUI,  KC_NO,    KC_NO,     KC_NO,    KC_NO,    KC_NO,    KC_NO,    MNXS,     RGB_MOD,   HMAP,
-    RGB_VAD,  RGB_SAD,   RGB_HUD,  KC_NO,    KC_TRNS,       MKNIGHT,        KC_TRNS,  KC_NO,    RGB_SPD,  RGB_RMOD,  RGB_SPI
-),
-
-[_RAISE] = LAYOUT_planck_mit(
-/*-----------------------------------------------------------------------------------.
- |   ~  |   %  |   &  |   ?  |   =  |   @  |   $  |   _  |   [  |   ]  |   !  |  DEL |
- |------+------+------+------+------+------+------+------+------+------+------+------|
- |   `  |   /  | ([{  |   |  |   0  |   {  |   }  |   1  |   *  |  }]) |   \  |   #  |
- |------+------+------+------+------+------+------+------+------+------+------+------|
- |   .  |   6  |   7  |   8  |   9  |   +  |   -  |   2  |   3  |   4  |   5  |   ^  |
- |------+------+------+------+------+-------------+------+------+------+------+------|
- |      |      |      |      |      |             |      |      |      |      |      |
- `-----------------------------------------------------------------------------------*/
-    KC_TILD,  KC_PERC,  KC_AMPR,    KC_QUES,  KC_EQL,   KC_AT,    KC_DLR,   KC_UNDS,  KC_LBRC,  KC_RBRC,    KC_EXLM,  KC_DEL,
-    KC_GRV,   KC_PSLS,  TD(OPNBR),  KC_PIPE,  KC_0,     KC_LCBR,  KC_RCBR,  KC_1,     KC_PAST,  TD(CLSBR),  KC_BSLS,  KC_HASH,
-    KC_PDOT,  KC_6,     KC_7,       KC_8,     KC_9,     KC_PPLS,  KC_PMNS,  KC_2,     KC_3,     KC_4,       KC_5,     KC_CIRC,
-    KC_NO,    KC_NO,    KC_NO,      KC_NO,    KC_TRNS,        KC_TRNS,      KC_TRNS,  KC_NO,    KC_NO,      KC_NO,    KC_NO
-),
-
-[_ADJUST] = LAYOUT_planck_mit(
-/*-----------------------------------------------------------------------------------.
- |      |   1  |   2  |   3  |   4  |   5  |   6  |   7  |   8  |   9  |   0  |QWERTY|
- |------+------+------+------+------+-------------+------+------+------+------+------|
- |      |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |  F7  |  F8  |  F9  |  F10 |RETPIE|
- |------+------+------+------+------+------+------+------+------+------+------+------|
- |      |  F11 |  F12 |  F13 |  F14 |  F15 |  F16 |  F17 |  F18 |  F19 |  F20 | NKRO |
- |------+------+------+------+------+-------------+------+------+------+------+------|
- |      |      |      |      |      |             |      |      |      |      |      |
- `-----------------------------------------------------------------------------------*/
-    KC_NO,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    QWERTY,
-    KC_NO,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  RETROPIE,
-    KC_NO,  KC_F11,  KC_F12,  KC_F13,  KC_F14,  KC_F15,  KC_F16,  KC_F17,  KC_F18,  KC_F19,  KC_F20,  NK_TOGG,
-    KC_NO,  KC_NO,   KC_NO,   KC_NO,   LOWER,   KC_TRNS,      KC_TRNS,     KC_TRNS,  KC_NO,   KC_NO,  KC_NO
+    KC_NO,       RGB_SLD1,  KC_MPRV,  KC_MPLY,  KC_MNXT,   KC_BRID,  KC_BRIU,  KC_VOLD,  KC_MUTE,  KC_VOLU,  RGB_SLD2,  QWERTY,
+    SPACECADET,  KC_NO,     KC_NO,    KC_NO,    KC_NO,     KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,     RETROPIE,
+    RGB_VAI,     RGB_SAI,   RGB_HUI,  KC_NO,    KC_NO,     KC_NO,    KC_NO,    KC_NO,    KC_NO,    MNXS,     RGB_MOD,   HMAP,
+    RGB_VAD,     RGB_SAD,   RGB_HUD,  KC_NO,    KC_TRNS,       MKNIGHT,        KC_TRNS,  KC_NO,    RGB_SPD,  RGB_RMOD,  RGB_SPI
 ),
 
 [_RESET] = LAYOUT_planck_mit(
@@ -197,6 +215,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
             break;
+        case SPACECADET:
+            if (record->event.pressed) {
+                set_single_persistent_default_layer(_SPACECADET);
+                rgblight_disable();
+                rgb_matrix_enable();
+            }
+            return false;
+            break;
         case LOWER:
             if (record->event.pressed) {
                 layer_on(_LOWER);
@@ -217,11 +243,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
             break;
-        case PROGRAM:
+        case FN:
             if (record->event.pressed) {
-                layer_on(_PROGRAM);
+                layer_on(_FN);
             } else {
-                layer_off(_PROGRAM);
+                layer_off(_FN);
             }
             return false;
             break;
@@ -571,7 +597,7 @@ uint8_t this_led = host_keyboard_leds();
             case _QWERTY:
                 set_underglow_color(0);
             break;
-            case _RETROPIE:
+            case _SPACECADET:
                 set_layer_color(1);
             break;
         }

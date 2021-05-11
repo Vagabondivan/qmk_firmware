@@ -24,4 +24,5 @@ AUDIO_ENABLE = no           # Audio output
 RGB_MATRIX_ENABLE = WS2812	# Enable RGB Matrix
 
 LAYOUTS = planck_mit
+LAYOUTS = bm40hsrgb
 LAYOUTS_HAS_RGB = yes

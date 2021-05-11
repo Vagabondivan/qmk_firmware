@@ -1,13 +1,11 @@
 #pragma once
 
 #ifdef AUDIO_ENABLE
-    #define STARTUP_SONG SONG(PREONIC_SOUND)
-    // #define STARTUP_SONG SONG(NO_SOUND)
-
-    #define DEFAULT_LAYER_SONGS { SONG(QWERTY_SOUND), \
-                                  SONG(COLEMAK_SOUND), \
-                                  SONG(DVORAK_SOUND) \
-                                }
+    #define STARTUP_SONG SONG(ZELDA_TREASURE)
+    #define LAYER_DEFAULT_SONGS { \
+        SONG(USSR_ANTHEM), \
+        SONG(E1M1_DOOM) \
+    }
 #endif
 
 #define MUSIC_MASK (keycode != KC_NO)
@@ -24,6 +22,7 @@
 
 #define MIDI_BASIC
 #define ENCODER_RESOLUTION 4
+
 #define MEDIA_KEY_DELAY 10
 
 /* enable advanced MIDI features:
@@ -36,8 +35,3 @@
 
 /* override number of MIDI tone keycodes (each octave adds 12 keycodes and allocates 12 bytes) */
 //#define MIDI_TONE_KEYCODE_OCTAVES 2
-
-#define AUDIO_CLICKY
-
-/* Maximum time (milliseconds) allowed for TAP-DANCE keys*/
-#define TAPPING_TERM 200

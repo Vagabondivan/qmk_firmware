@@ -75,7 +75,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	KC_TAB,     KC_Q,		KC_W,       KC_E,       KC_R,		KC_T,		KC_Y,		KC_U,		KC_I,	  	KC_O,      KC_P,		KC_QUOT,\
 	TD(OPNBR),  KC_A,		KC_S,       KC_D,       KC_F,		KC_G,		KC_H,		KC_J,		KC_K, 		KC_L,      KC_SCLN,     TD(CLSBR),\
 	TD(CPSLK),  KC_Z,		KC_X,       KC_C,       KC_V,       KC_B,       KC_N,		KC_M,		KC_COMM,	KC_DOT,    KC_SLSH,     KC_ENT,\
-	PROGRAM,    KC_LCTL,    KC_LALT,	KC_LGUI,    LOWER,      KC_SPC,                 RAISE,      KC_LEFT,	KC_DOWN,   KC_UP,		KC_RGHT\
+	PROGRAM,    KC_LCTL,    KC_LGUI,	KC_LALT,    LOWER,      KC_SPC,                 RAISE,      KC_LEFT,	KC_DOWN,   KC_UP,		KC_RGHT\
 ),
 
 /* Gaming
@@ -272,7 +272,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             break;
         case MENDL: // The Grand Brudapest Hotel
             if (record->event.pressed) {
-                SEND_STRING("MENDL'S");
+                SEND_STRING("Ivano Piacenza");
             }
             return false;
             break;
@@ -355,6 +355,63 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 };
 
 
+// ENCODER SECTION ***************************************************************
+
+void knob_code(uint16_t keycode) {
+  uint16_t held_keycode_timer = timer_read();
+  register_code(keycode);
+  while (timer_elapsed(held_keycode_timer) < MEDIA_KEY_DELAY) {
+      // no-op
+  }
+  unregister_code(keycode);
+}
+
+void encoder_update_user(uint8_t index, bool clockwise) {
+
+    switch (biton32(layer_state)) {
+
+    case _QWERTY:
+        if (clockwise) {
+          tap_code(KC_MS_WH_UP);
+          break;
+        } else {
+          tap_code(KC_MS_WH_DOWN);
+          break;
+        }
+    case _LOWER:
+        if (clockwise) {
+          tap_code(KC_DOWN);
+          break;
+        } else {
+          tap_code(KC_UP);
+          break;
+        }
+    case _RAISE:
+        if (clockwise) {
+          knob_code(KC_VOLU);
+          break;
+        } else {
+          knob_code(KC_VOLD);
+          break;
+        }
+    case _PROGRAM:
+        if (clockwise) {
+          tap_code(KC_RIGHT);
+          break;
+        } else {
+          tap_code(KC_LEFT);
+          break;
+        }
+    case _ADJUST:
+        if (clockwise) {
+          tap_code(KC_PGUP);
+          break;
+        } else {
+          tap_code(KC_PGDN);
+          break;
+        }
+    }
+}
 // TAP DANCE SECTION ***************************************************************
 
 // OPENING Brackets
