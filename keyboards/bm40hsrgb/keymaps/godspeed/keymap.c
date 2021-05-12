@@ -146,14 +146,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /*-----------------------------------------------------------------------------------.
  | NKRO |BW-RGB| PREV | PLAY | NEXT | BRID | BRIU | VOL- | MUTE | VOL+ |RGBTOG|QWERTY|
  |------+------+------+------+------+------+------+------+------+------+------+------|
- |      |      |      |      |      |      |      |      |      |   @  |   #  |RETPIE|
+ |      |      |      |      |      |      |      |      |      |      |      |RETPIE|
  |------+------+------+------+------+------+------+------+------+------+------+------|
  | BRI+ | SAT+ | HUE+ |      |      |      |      |      |      | MNXS | MOD+ | HMAP |
  |------+------+------+------+------+------+------+------+------+------+------+------|
  | BRI- | SAT- | HUE- |      |      | KNIGHTRIDER |      |      | SPD- | MOD- | SPD+ |
  `-----------------------------------------------------------------------------------*/
     NK_TOGG,  RGB_SLD1,  KC_MPRV,  KC_MPLY,  KC_MNXT,   KC_BRID,  KC_BRIU,  KC_VOLD,  KC_MUTE,  KC_VOLU,  RGB_SLD2,  QWERTY,
-    KC_NO,    KC_NO,     KC_NO,    KC_NO,    KC_NO,     KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_AT,    KC_HASH,   RETROPIE,
+    KC_NO,    KC_NO,     KC_NO,    KC_NO,    KC_NO,     KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,     RETROPIE,
     RGB_VAI,  RGB_SAI,   RGB_HUI,  KC_NO,    KC_NO,     KC_NO,    KC_NO,    KC_NO,    KC_NO,    MNXS,     RGB_MOD,   HMAP,
     RGB_VAD,  RGB_SAD,   RGB_HUD,  KC_NO,    KC_TRNS,       MKNIGHT,        KC_TRNS,  KC_NO,    RGB_SPD,  RGB_RMOD,  RGB_SPI
 ),
