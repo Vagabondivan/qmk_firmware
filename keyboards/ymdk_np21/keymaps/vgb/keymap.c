@@ -153,7 +153,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   |ZABBIX1|ZABBIX2| ROOT  |       |
   |       |       |       |  BL   |
   |-------+-------+-------+       |
-  |               |OSL(4) |  DEC  |
+  |     EXIT      |OSL(4) |  DEC  |
   |               |       |       |
   `-------------------------------*/ 
  
