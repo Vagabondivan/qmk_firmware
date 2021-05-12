@@ -1,4 +1,4 @@
-/* Copyright 2020 vagabondivan
+/* Copyright 2021 vagabondivan
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -300,7 +300,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             break;
         case MAIL:  // Write your email address
             if (record->event.pressed) {
-                SEND_STRING("mail.ivanp@gmail.com");
+                SEND_STRING("mail@gmail.com");
             }
             return false;
             break;
