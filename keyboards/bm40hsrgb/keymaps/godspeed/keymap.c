@@ -1,4 +1,4 @@
-/* Copyright 2020 vagabondivan
+/* Copyright 2021 vagabondivan
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
