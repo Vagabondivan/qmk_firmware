@@ -1,4 +1,4 @@
-# X-Wing keymap for bm40hsrgb
+# Godspeed keymap for bm40hsrgb
 
 - Keyboard lights up with Knight Rider effect.
 
@@ -8,7 +8,7 @@
 
 - RGB Light, RGB Matrix fx, RGB underglow. 
 
-- ADJUST layer (press LOWER and RAISE together) to switch between first 2 layers and to put the pcb in FLASH mode.
+- ADJUST layer (press LOWER and RAISE together) to switch between first 2 layers and to manage lights.
 
 - TAP DANCE to switch on/off CAPSLOCK led (double tap left shift)
 
