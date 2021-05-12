@@ -17,126 +17,127 @@ enum custom_keycodes {
     MACROSA,
     MACROSB,
     RAISE,
+    PWD1,
+    PWD2,
+    MAIL,
     LNAV1,
     LNAV2,
     LNAV3,
-    DPKG1,
-    DPKG2,
-    DPKG3,
+    ZABBIX1,
+    ZABBIX2,
     RUDDER1,
     RUDDER2,
     RUDDER3,
     APT1,
-    APT2,
-    APT3,
     APT4,
-    APT5,
-    APT6,
     APT7,
-    APT8,
+    DPKG1,
+    DPKG2,
+    DPKG3,
+    APT3,
+    APT6,
     APT9,
-    PWD1,
-    PWD2,
-    ROOT,
-    EXIT,
-    ZABBIX1,
-    ZABBIX2
+    APT5,
+    APT8,
+    SYSRST
+
+
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
- [_NUMPAD] = LAYOUT_ortho_6x4(
- 
+ [_NUMPAD] = LAYOUT_ortho_6x4 (
+
  /*-------------------------------.
-  | ESC   |       |  %    | FN    |
+  | ESC   | AC    | %     | FN    |
   |       |       |       |       |
   |-------+-------+-------+-------|
-  |  C    |  /    |  *    |  -    |
+  | C     | /     | *     | -     |
   |       |       |       |       |
   |-------+-------+-------+-------|
-  |  7    |  8    |  9    |       |
+  | 7     | 8     | 9     |       |
   |       |       |       |       |
   |-------+-------+-------+   +   |
-  |  4    |  5    |  6    |       |
+  | 4     | 5     | 6     |       |
   |       |       |       |       |
   |-------+-------+-------+-------|
-  |  1    |  2    |  3    |   E   |
+  | 1     | 2     | 3     |   E   |
   |       |       |       |   N   |
   |-------+-------+-------+   T   |
-  |  0            |  .    |   E   |
+  | 0             |  .    |   E   |
   |               |       |   R   |
-  `-------------------------------*/ 
- 
+  `-------------------------------*/
+
    LALT(KC_ESC),  LALT(KC_SLSH),  KC_PERC,         RAISE,
    KC_C,          KC_PSLS,        KC_PAST,         KC_PMNS,
    KC_P7,         KC_P8,          KC_P9,           KC_PPLS,
    KC_P4,         KC_P5,          KC_P6,           KC_PPLS,
    KC_P1,         KC_P2,          KC_P3,           KC_PENT,
-   KC_P0,         KC_P0,          KC_PDOT,         KC_PENT
+   KC_P0,         KC_P0,          KC_DOT,          KC_PENT
 ),
 
- [_MACROSA] = LAYOUT_ortho_6x4(
- 
+ [_MACROSA] = LAYOUT_ortho_6x4 (
+
  /*-------------------------------.
-  |  PWD1 | PWD2  |       |       |
+  | PWD1  | PWD2  | MAIL  |       |
   |       |       |       |       |
   |-------+-------+-------+-------|
-  |  Y    |  N    |       | BCKSP |
+  | Y     | N     |       | BCKSP |
   |       |       |       |       |
   |-------+-------+-------+-------|
-  | LNAV1 | DPKG1 |RUDDER1|       |
+  | LNAV1 |ZABBIX1|RUDDER1|       |
   |       |       |       |       |
   |-------+-------+-------+   L   |
-  | LNAV2 | DPKG2 |RUDDER2|       |
+  | LNAV2 |ZABBIX2|RUDDER2|       |
   |       |       |       |       |
   |-------+-------+-------+-------|
-  | LNAV3 | DPKG3 |RUDDER3|   E   |
+  | LNAV3 |       |RUDDER3|   E   |
   |       |       |       |   N   |
   |-------+-------+-------+   T   |
   |               |       |   E   |
   |               |       |   R   |
-  `-------------------------------*/ 
- 
-   PWD1,           PWD2,           KC_NO,          _______,
+  `-------------------------------*/
+
+   PWD1,           PWD2,           MAIL,           _______,
    KC_Y,           KC_N,           KC_NO,          KC_BSPC,
-   LNAV1,          DPKG1,          RUDDER1,        KC_L,
-   LNAV2,          DPKG2,          RUDDER2,        KC_ENT,
-   LNAV3,          DPKG3,          RUDDER3,        KC_ENT,
+   LNAV1,          ZABBIX1,        RUDDER1,        KC_L,
+   LNAV2,          ZABBIX2,        RUDDER2,        KC_ENT,
+   LNAV3,          KC_NO,          RUDDER3,        KC_ENT,
    KC_NO,          KC_NO,          KC_NO,          KC_ENT
 ),
 
- [_MACROSB] = LAYOUT_ortho_6x4(
- 
+ [_MACROSB] = LAYOUT_ortho_6x4 (
+
  /*-------------------------------.
-  |       |       |       |       |
-  |       |       |       |       |
-  |-------+-------+-------+-------|
-  |  Y    |  N    |       | BCKSP |
+  |  PWD1 | PWD2  | MAIL  |       |
   |       |       |       |       |
   |-------+-------+-------+-------|
-  |  APT7 |  APT8 |  APT9 |       |
+  |  Y    |  N    |  APT8 | BCKSP |
+  |       |       |       |       |
+  |-------+-------+-------+-------|
+  |  APT7 | DPKG3 |  APT9 |       |
   |       |       |       |       |
   |-------+-------+-------+   L   |
-  |  APT4 |  APT5 |  APT6 |       |
+  |  APT4 | DPKG2 |  APT6 |       |
   |       |       |       |       |
   |-------+-------+-------+-------|
-  |  APT1 |  APT2 |  APT3 |   E   |
+  |  APT1 | DPKG1 |  APT3 |   E   |
   |       |       |       |   N   |
   |-------+-------+-------+   T   |
-  |               |       |   E   |
+  |     SYSRST    |  APT5 |   E   |
   |               |       |   R   |
-  `-------------------------------*/ 
- 
+  `-------------------------------*/
+
    PWD1,           PWD2,           KC_NO,          _______,
-   KC_Y,           KC_N,           KC_NO,          KC_BSPC,
-   APT7,           APT8,           APT9,           KC_L,
-   APT4,           APT5,           APT6,           KC_ENT,
-   APT1,           APT2,           APT3,           KC_ENT,
-   KC_NO,          KC_NO,          KC_NO,          KC_ENT
+   KC_Y,           KC_N,           APT8,           KC_BSPC,
+   APT7,           DPKG3,          APT9,           KC_L,
+   APT4,           DPKG2,          APT6,           KC_ENT,
+   APT1,           DPKG1,          APT3,           KC_ENT,
+   APT5,           KC_NO,          SYSRST,         KC_ENT
 ),
 
- [_RAISE] = LAYOUT_ortho_6x4(
- 
+ [_RAISE] = LAYOUT_ortho_6x4 (
+
  /*-------------------------------.
   | NUMPD |MACROSA|MACROSB|       |
   |       |       |       |       |
@@ -150,23 +151,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   |       |       |       |  INC  |
   |       |       |       |       |
   |-------+-------+-------+-------|
-  |ZABBIX1|ZABBIX2| ROOT  |       |
+  |       |       |       |       |
   |       |       |       |  BL   |
   |-------+-------+-------+       |
-  |     EXIT      |OSL(4) |  DEC  |
+  |               |OSL(4) |  DEC  |
   |               |       |       |
-  `-------------------------------*/ 
- 
+  `-------------------------------*/
+
    NUMPAD,         MACROSA,        MACROSB,        _______,
    KC_NO,          KC_NO,          KC_NO,          BL_TOGG,
    KC_NO,          KC_NO,          KC_NO,          BL_INC,
    KC_NO,          KC_NO,          KC_NO,          BL_INC,
-   ZABBIX1,        ZABBIX2,        ROOT,           BL_DEC,
-   EXIT,           EXIT,           OSL(4),         BL_DEC
+   KC_NO,          KC_NO,          KC_NO,          BL_DEC,
+   KC_NO,          KC_NO,          OSL(4),         BL_DEC
 ),
 
- [_RESET] = LAYOUT_ortho_6x4(
- 
+ [_RESET] = LAYOUT_ortho_6x4 (
+
  /*-------------------------------.
   |       |       |       |       |
   |       |       |       |       |
@@ -185,8 +186,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   |-------+-------+-------+       |
   |               | RESET |       |
   |               |       |       |
-  `-------------------------------*/ 
- 
+  `-------------------------------*/
+
    KC_NO,          KC_NO,          KC_NO,          KC_NO,
    KC_NO,          KC_NO,          KC_NO,          KC_NO,
    KC_NO,          KC_NO,          KC_NO,          KC_NO,
@@ -230,6 +231,27 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             return false;
             break;
 
+        case PWD1:  // Notes
+            if (record->event.pressed) {
+                SEND_STRING("password01");
+            }
+            return false;
+            break;
+
+        case PWD2:  // Notes
+            if (record->event.pressed) {
+                SEND_STRING("Blueshark72$");
+            }
+            return false;
+            break;
+
+        case MAIL:  // Notes
+            if (record->event.pressed) {
+                SEND_STRING("mail.ivanp@gmail.com");
+            }
+            return false;
+            break;
+
         case LNAV1:  // Notes
             if (record->event.pressed) {
                 SEND_STRING("lnav /mnt/ACCESSLOG/access.log");
@@ -251,37 +273,16 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             return false;
             break;
 
-        case DPKG1:  // Notes
+        case ZABBIX1:  // Notes
             if (record->event.pressed) {
-                SEND_STRING("dpkg -l | grep delivery");
+                SEND_STRING("mkdir /run/zabbix/; chown zabbix /run/zabbix; systemctl restart zabbix-agent");
             }
             return false;
             break;
 
-        case DPKG2:  // Notes
+        case ZABBIX2:  // Notes
             if (record->event.pressed) {
-                SEND_STRING("dpkg -l | grep lua-mainstreaming");
-            }
-            return false;
-            break;
-
-        case DPKG3:  // Notes
-            if (record->event.pressed) {
-                SEND_STRING("dpkg -l | grep machinecontroller");
-            }
-            return false;
-            break;
-
-        case PWD1:  // Notes
-            if (record->event.pressed) {
-                SEND_STRING("");
-            }
-            return false;
-            break;
-
-        case PWD2:  // Notes
-            if (record->event.pressed) {
-                SEND_STRING("");
+                SEND_STRING("/usr/sbin/nginx -t 2>/tmp/nginxLogConfigTest ; echo $? > /tmp/nginxConfigTest");
             }
             return false;
             break;
@@ -314,37 +315,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             return false;
             break;
 
-        case APT2:  // Notes
-            if (record->event.pressed) {
-                SEND_STRING("sudo apt-get update --fix-missing");
-            }
-            return false;
-            break;
-
-        case APT3:  // Notes
-            if (record->event.pressed) {
-                SEND_STRING("sudo apt list --upgradable");
-            }
-            return false;
-            break;
-
         case APT4:  // Notes
             if (record->event.pressed) {
                 SEND_STRING("sudo apt-mark hold ");
-            }
-            return false;
-            break;
-
-        case APT5:  // Notes
-            if (record->event.pressed) {
-                SEND_STRING("sudo apt --only-upgrade install");
-            }
-            return false;
-            break;
-
-        case APT6:  // Notes
-            if (record->event.pressed) {
-                SEND_STRING("sudo apt autoremove");
             }
             return false;
             break;
@@ -356,44 +329,65 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             return false;
             break;
 
-        case APT8:  // Notes
+        case DPKG1:  // Notes
             if (record->event.pressed) {
-                SEND_STRING("");
+                SEND_STRING("dpkg -l | grep delivery");
+            }
+            return false;
+            break;
+
+        case DPKG2:  // Notes
+            if (record->event.pressed) {
+                SEND_STRING("dpkg -l | grep lua-mainstreaming");
+            }
+            return false;
+            break;
+
+        case DPKG3:  // Notes
+            if (record->event.pressed) {
+                SEND_STRING("dpkg -l | grep machinecontroller");
+            }
+            return false;
+            break;
+
+        case APT3:  // Notes
+            if (record->event.pressed) {
+                SEND_STRING("sudo apt list --upgradable");
+            }
+            return false;
+            break;
+
+        case APT6:  // Notes
+            if (record->event.pressed) {
+                SEND_STRING("sudo apt autoremove");
             }
             return false;
             break;
 
         case APT9:  // Notes
             if (record->event.pressed) {
-                SEND_STRING("");
+                SEND_STRING("sudo apt-get update --fix-missing");
             }
             return false;
             break;
 
-        case ROOT:  // Notes
+        case APT8:  // Notes
             if (record->event.pressed) {
-                SEND_STRING("sudo su");
+                SEND_STRING("sudo apt --only-upgrade install");
             }
             return false;
             break;
 
-        case EXIT:  // Notes
+        case APT5:  // Notes
             if (record->event.pressed) {
-                SEND_STRING("exit");
+                SEND_STRING("sudo apt install ");
             }
             return false;
             break;
 
-        case ZABBIX1:  // Notes
+        case SYSRST:  // Notes
             if (record->event.pressed) {
-                SEND_STRING("mkdir /run/zabbix/; chown zabbix /run/zabbix; systemctl restart zabbix-agent");
-            }
-            return false;
-            break;
-
-        case ZABBIX2:  // Notes
-            if (record->event.pressed) {
-                SEND_STRING("/usr/sbin/nginx -t 2>/tmp/nginxLogConfigTest ; echo $? > /tmp/nginxConfigTest");
+                SEND_STRING("sudo systemctl restart ");
             }
             return false;
             break;
