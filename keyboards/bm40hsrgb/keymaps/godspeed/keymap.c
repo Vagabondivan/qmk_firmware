@@ -29,7 +29,6 @@ enum custom_layers {
 // Custom keycodes
 enum custom_keycodes {
     QWERTY = SAFE_RANGE,
-    QWERTY2,
     RETROPIE,
     FN,
     LOWER,
@@ -302,7 +301,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             break;
         case MAIL:  // Write your email address
             if (record->event.pressed) {
-                SEND_STRING("mail.ivanp@gmail.com");
+                SEND_STRING("mail@gmail.com");
             }
             return false;
             break;
