@@ -1,4 +1,4 @@
-# Covid 19 keymap for Preonic Rev. 3
+# Commodore 64 keymap for Preonic Rev. 3
 
 - QWERTY + GAMING (Retropie and MAME)
 
