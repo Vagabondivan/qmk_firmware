@@ -80,44 +80,44 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* Gaming
  * ,-----------------------------------------------------------------------------------.
- * |      |      |      |      |      |      |      |      |      |      |      |      |
+ * | Esc  |      |      |      |      |      |      |      |      |      |      | Bksp |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      |      |      |      |      |      |      |      |      |
+ * | Tab  |      |      |      |      |      |      |      |      |      |      |   @  |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      |      |      |      |      |      |      |      |      |
+ * |  =   |      |      |      |      |      |      |      |      |      |      |   ;  |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      |      |      |      |      |      |      |      |      |
+ * | Shft |      |      |      |      |      |      |      |      |      |      |  Ent |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
  * |  Fn  | Ctrl | Alt  |  Os  |Lower |    Space    |Raise | Left | Down |  Up  |Right |
  * `-----------------------------------------------------------------------------------'
  */
-[_GAMING] = = LAYOUT_preonic_1x2uC (	\
-    KC_NO,  KC_NO,    KC_NO,    KC_NO,    KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,    KC_NO,    KC_NO,    KC_NO,\
-    KC_NO,  KC_NO,    KC_NO,    KC_NO,    KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,    KC_NO,    KC_NO,    KC_NO,\
-    KC_NO,  KC_NO,    KC_NO,    KC_NO,    KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,    KC_NO,    KC_NO,    KC_NO,\
-    KC_NO,  KC_NO,    KC_NO,    KC_NO,    KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,    KC_NO,    KC_NO,    KC_NO,\
-	FN,     KC_LCTL,  KC_LGUI,  KC_LALT,  LOWER,     KC_SPC,      RAISE,  KC_LEFT,  KC_DOWN,  KC_UP,   KC_RGHT\
+[_GAMING] = LAYOUT_preonic_1x2uC (	\
+    KC_ESC,     KC_NO,    KC_NO,    KC_NO,    KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,    KC_NO,    KC_NO,  KC_BSPC,\
+    KC_TAB,     KC_NO,    KC_NO,    KC_NO,    KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,    KC_NO,    KC_NO,  KC_AT,\
+    KC_PEQL,    KC_NO,    KC_NO,    KC_NO,    KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,    KC_NO,    KC_NO,  KC_SCLN,\
+    TD(CPSLK),  KC_NO,    KC_NO,    KC_NO,    KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,    KC_NO,    KC_NO,  KC_ENT,\
+	FN,         KC_LCTL,  KC_LGUI,  KC_LALT,  LOWER,     KC_SPC,      RAISE,  KC_LEFT,  KC_DOWN,  KC_UP,  KC_RGHT\
 ),
 
 /* Numpad
  * ,-----------------------------------------------------------------------------------.
- * |      |      |      |      |      |      |      |      |      |      |      |      |
+ * | Esc  |      |      |      |      |      |      |      |      |      |      | Bksp |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      |      |      |      |      |      |      |      |      |
+ * | Tab  |      |      |      |      |      |      |      |      |      |      |   @  |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      |      |      |      |      |      |      |      |      |
+ * |  =   |      |      |      |      |      |      |      |      |      |      |   ;  |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      |      |      |      |      |      |      |      |      |
+ * | Shft |      |      |      |      |      |      |      |      |      |      |  Ent |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
  * |  Fn  | Ctrl | Alt  |  Os  |Lower |    Space    |Raise | Left | Down |  Up  |Right |
  * `-----------------------------------------------------------------------------------'
  */
 [_NUMPAD] = LAYOUT_preonic_1x2uC (	\
-    KC_NO,  KC_NO,    KC_NO,    KC_NO,    KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,    KC_NO,    KC_NO,    KC_NO,\
-    KC_NO,  KC_NO,    KC_NO,    KC_NO,    KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,    KC_NO,    KC_NO,    KC_NO,\
-    KC_NO,  KC_NO,    KC_NO,    KC_NO,    KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,    KC_NO,    KC_NO,    KC_NO,\
-    KC_NO,  KC_NO,    KC_NO,    KC_NO,    KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,    KC_NO,    KC_NO,    KC_NO,\
-	FN,     KC_LCTL,  KC_LGUI,  KC_LALT,  LOWER,     KC_SPC,      RAISE,  KC_LEFT,  KC_DOWN,  KC_UP,   KC_RGHT\
+    KC_ESC,     KC_NO,    KC_NO,    KC_NO,    KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,    KC_NO,    KC_NO,  KC_BSPC,\
+    KC_TAB,     KC_NO,    KC_NO,    KC_NO,    KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,    KC_NO,    KC_NO,  KC_AT,\
+    KC_PEQL,    KC_NO,    KC_NO,    KC_NO,    KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,    KC_NO,    KC_NO,  KC_SCLN,\
+    TD(CPSLK),  KC_NO,    KC_NO,    KC_NO,    KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,    KC_NO,    KC_NO,  KC_ENT,\
+	FN,         KC_LCTL,  KC_LGUI,  KC_LALT,  LOWER,     KC_SPC,      RAISE,  KC_LEFT,  KC_DOWN,  KC_UP,  KC_RGHT\
 ),
 
 /* Lower
