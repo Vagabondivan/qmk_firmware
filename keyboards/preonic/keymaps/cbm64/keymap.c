@@ -1,4 +1,4 @@
-/* COVID_19 - Copyright 2020 Ivano Piacenza
+/* CBM64 - Copyright 2020 Ivano Piacenza
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
