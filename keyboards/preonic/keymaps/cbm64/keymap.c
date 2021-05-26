@@ -19,8 +19,8 @@
 // Layer Names declarations
 enum layers {
     _QWERTY,
+    _CBM64,
     _GAMING,
-    _NUMPAD,
     _LOWER,
     _RAISE,
     _ADJUST,
@@ -30,10 +30,11 @@ enum layers {
 // Custom keycodes declarations
 enum keycodes {
     QWERTY = SAFE_RANGE,
-    GAMING,
-    NUMPAD,
+	CBM64,
+	GAMING,
     LOWER,
     RAISE,
+    ADJUST,
     FN,
     DBLOO,
     MAIL,
@@ -99,25 +100,25 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	FN,         KC_LCTL,  KC_LGUI,  KC_LALT,  LOWER,     KC_SPC,      RAISE,  KC_LEFT,  KC_DOWN,  KC_UP,  KC_RGHT\
 ),
 
-/* Numpad
+/* CBM64
  * ,-----------------------------------------------------------------------------------.
- * | Esc  |      |      |      |      |      |      |      |      |      |      | Bksp |
+ * | Esc  |   1  |   2  |   3  |   4  |   5  |   6  |   7  |   8  |   9  |   0  | Bksp |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Tab  |      |      |      |      |      |      |      |      |      |      |   @  |
+ * |  *   |   q  |   w  |   e  |   r  |   t  |   y  |   u  |   i  |   o  |   p  |   @  |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |  =   |      |      |      |      |      |      |      |      |      |      |   ;  |
+ * |  =   |   a  |   s  |   d  |   f  |   g  |   h  |   j  |   k  |   l  |   :  |   ;  |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Shft |      |      |      |      |      |      |      |      |      |      |  Ent |
+ * | Shft |   z  |   x  |   c  |   v  |   b  |   n  |   m  |   ,  |   .  |   /  |  Ent |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
- * |  Fn  | Ctrl | Alt  |  Os  |Lower |    Space    |Raise | Left | Down |  Up  |Right |
+ * |INS/DL|CLR/HM|   -  |   +  |SH/LCK|    Space    |RUN/ST| Left | Down |  Up  |Right |
  * `-----------------------------------------------------------------------------------'
  */
-[_NUMPAD] = LAYOUT_preonic_1x2uC (	\
-    KC_ESC,     KC_NO,    KC_NO,    KC_NO,    KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,    KC_NO,    KC_NO,  KC_BSPC,\
-    KC_TAB,     KC_NO,    KC_NO,    KC_NO,    KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,    KC_NO,    KC_NO,  KC_AT,\
-    KC_PEQL,    KC_NO,    KC_NO,    KC_NO,    KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,    KC_NO,    KC_NO,  KC_SCLN,\
-    TD(CPSLK),  KC_NO,    KC_NO,    KC_NO,    KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,    KC_NO,    KC_NO,  KC_ENT,\
-	FN,         KC_LCTL,  KC_LGUI,  KC_LALT,  LOWER,     KC_SPC,      RAISE,  KC_LEFT,  KC_DOWN,  KC_UP,  KC_RGHT\
+[_CBM64] LAYOUT_preonic_1x2uC (	\
+	ADJUST,   KC_P1,    KC_P2,    KC_P3,    KC_P4,    KC_P5,  KC_P6,  KC_P7,   KC_P8,    KC_P9,    KC_P0,    KC_BSPC,\
+	KC_ASTR,  KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,   KC_Y,   KC_U,    KC_I,     KC_O,     KC_P,     KC_AT,\
+	KC_PEQL,  KC_A,     KC_S,     KC_D,     KC_F,     KC_G,   KC_H,   KC_J,    KC_K,     KC_L,     KC_COLN,  KC_SCLN,\
+	KC_LSFT,  KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,   KC_N,   KC_M,    KC_COMM,  KC_DOT,   KC_SLSH,  KC_ENT,\
+	FN,       KC_HOME,  KC_PLUS,  KC_MINS,  KC_CAPS,      KC_SPC,     KC_ESC,  KC_LEFT,  KC_DOWN,  KC_UP,    KC_RGHT\
 ),
 
 /* Lower
@@ -191,7 +192,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |      |      |      |      |      |      |      |      |      |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |Qwerty|Gaming|Numpad|      |      |      |      |WipeEP|Debug |Reset |      |
+ * |      |Qwerty|Gaming|CBM64|      |      |      |      |WipeEP|Debug |Reset |      |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
  * |      |      |      |      |Lower |             |Raise |      |      |      |      |
  * `-----------------------------------------------------------------------------------'
@@ -200,7 +201,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_NO,    KC_NO,    KC_NO,      KC_NO,      KC_NO,    KC_NO,        KC_NO,      KC_NO,    KC_NO,    KC_NO,      KC_NO,      KC_NO,\
     KC_NO,    KC_NO,    KC_NO,      KC_NO,      KC_NO,    KC_NO,        KC_NO,      KC_NO,    KC_NO,    KC_NO,      KC_NO,      KC_NO,\
     KC_NO,    KC_NO,    KC_NO,      KC_NO,      KC_NO,    KC_NO,        KC_NO,      KC_NO,    KC_NO,    KC_NO,      KC_NO,      KC_NO,\
-    KC_NO,    QWERTY,   GAMING,     NUMPAD,     KC_NO,    KC_NO,        KC_NO,      KC_NO,    EEP_RST,	DEBUG,      RESET,      KC_NO,\
+    KC_NO,    QWERTY,   GAMING,     CBM64,     KC_NO,    KC_NO,        KC_NO,      KC_NO,    EEP_RST,	DEBUG,      RESET,      KC_NO,\
     KC_NO,    KC_NO,    KC_NO,      KC_NO,      LOWER,    KC_NO,                    RAISE,    KC_NO,    KC_NO,      KC_NO,      KC_NO\
 )
 
@@ -222,9 +223,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
             break;
-        case NUMPAD:
+        case CBM64:
             if (record->event.pressed) {
-                set_single_persistent_default_layer(_NUMPAD);
+                set_single_persistent_default_layer(_CBM64);
             }
             return false;
             break;
@@ -258,7 +259,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
             break;
-        case DBLOO:  // Double Zero for NUMPAD
+        case DBLOO:  // Double Zero for CBM64
             if (record->event.pressed) {
                 SEND_STRING("00");
             }
