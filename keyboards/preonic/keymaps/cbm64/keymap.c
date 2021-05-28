@@ -30,13 +30,11 @@ enum layers {
 // Custom keycodes declarations
 enum keycodes {
     QWERTY = SAFE_RANGE,
-	CBM64,
-	GAMING,
+    CBM64,
+    GAMING,
     LOWER,
     RAISE,
-    ADJUST,
     FN,
-    DBLOO,
     MAIL,
     EURO,
     SPAIN1,
@@ -81,28 +79,27 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* Gaming
  * ,-----------------------------------------------------------------------------------.
- * | Esc  |      |      |      |      |      |      |      |      |      |      | Bksp |
+ * | Esc  |   1  |   2  |   3  |   4  |   5  |   6  |   7  |   8  |   9  |   0  | Bksp |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Tab  |      |      |      |      |      |      |      |      |      |      |   @  |
+ * | Tab  |   q  |   w  |   e  |   r  |   t  |   y  |   u  |   i  |   o  |   p  |   @  |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |  =   |      |      |      |      |      |      |      |      |      |      |   ;  |
+ * |  =   |   a  |   s  |   d  |   f  |   g  |   h  |   j  |   k  |   l  |   :  |   ;  |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Shft |      |      |      |      |      |      |      |      |      |      |  Ent |
+ * | Shft |   z  |   x  |   c  |   v  |   b  |   n  |   m  |   ,  |   .  |   /  |  Ent |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
  * |  Fn  | Ctrl | Alt  |  Os  |Lower |    Space    |Raise | Left | Down |  Up  |Right |
  * `-----------------------------------------------------------------------------------'
  */
 [_GAMING] = LAYOUT_preonic_1x2uC (	\
-    KC_ESC,     KC_NO,    KC_NO,    KC_NO,    KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,    KC_NO,    KC_NO,  KC_BSPC,\
-    KC_TAB,     KC_NO,    KC_NO,    KC_NO,    KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,    KC_NO,    KC_NO,  KC_AT,\
-    KC_PEQL,    KC_NO,    KC_NO,    KC_NO,    KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,    KC_NO,    KC_NO,  KC_SCLN,\
-    TD(CPSLK),  KC_NO,    KC_NO,    KC_NO,    KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,    KC_NO,    KC_NO,  KC_ENT,\
-	FN,         KC_LCTL,  KC_LGUI,  KC_LALT,  LOWER,     KC_SPC,      RAISE,  KC_LEFT,  KC_DOWN,  KC_UP,  KC_RGHT\
+	KC_ESC,     KC_P1,    KC_P2,    KC_P3,    KC_P4,  KC_P5,  KC_P6,  KC_P7,  KC_P8,    KC_P9,    KC_P0,    KC_BSPC,\
+	KC_TAB,     KC_Q,     KC_W,     KC_E,     KC_R,   KC_T,   KC_Y,   KC_U,   KC_I,     KC_O,     KC_P,     KC_AT,\
+	KC_PEQL,    KC_A,     KC_S,     KC_D,     KC_F,   KC_G,   KC_H,   KC_J,   KC_K,     KC_L,     KC_COLN,  KC_SCLN,\
+	TD(CPSLK),  KC_Z,     KC_X,     KC_C,     KC_V,   KC_B,   KC_N,   KC_M,   KC_COMM,  KC_DOT,   KC_SLSH,  KC_ENT,\
+	FN,         KC_LCTL,  KC_LGUI,  KC_LALT,  LOWER,      KC_SPC,     RAISE,  KC_LEFT,  KC_DOWN,  KC_UP,    KC_RGHT\
 ),
-
 /* CBM64
  * ,-----------------------------------------------------------------------------------.
- * | Esc  |   1  |   2  |   3  |   4  |   5  |   6  |   7  |   8  |   9  |   0  | Bksp |
+ * | ESC  |   1  |   2  |   3  |   4  |   5  |   6  |   7  |   8  |   9  |   0  | Bksp |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |  *   |   q  |   w  |   e  |   r  |   t  |   y  |   u  |   i  |   o  |   p  |   @  |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
@@ -110,15 +107,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | Shft |   z  |   x  |   c  |   v  |   b  |   n  |   m  |   ,  |   .  |   /  |  Ent |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
- * |INS/DL|CLR/HM|   -  |   +  |SH/LCK|    Space    |RUN/ST| Left | Down |  Up  |Right |
+ * |INS/DL|CLR/HM|   -  |   +  |Lower |    Space    | Raise| Left | Down |  Up  |Right |
  * `-----------------------------------------------------------------------------------'
  */
 [_CBM64] LAYOUT_preonic_1x2uC (	\
-	ADJUST,   KC_P1,    KC_P2,    KC_P3,    KC_P4,    KC_P5,  KC_P6,  KC_P7,   KC_P8,    KC_P9,    KC_P0,    KC_BSPC,\
-	KC_ASTR,  KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,   KC_Y,   KC_U,    KC_I,     KC_O,     KC_P,     KC_AT,\
-	KC_PEQL,  KC_A,     KC_S,     KC_D,     KC_F,     KC_G,   KC_H,   KC_J,    KC_K,     KC_L,     KC_COLN,  KC_SCLN,\
-	KC_LSFT,  KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,   KC_N,   KC_M,    KC_COMM,  KC_DOT,   KC_SLSH,  KC_ENT,\
-	FN,       KC_HOME,  KC_PLUS,  KC_MINS,  KC_CAPS,      KC_SPC,     KC_ESC,  KC_LEFT,  KC_DOWN,  KC_UP,    KC_RGHT\
+	KC_ESC,   KC_1,     KC_2,     KC_3,     KC_4,     KC_5,   KC_6,   KC_7,   KC_8,     KC_9,     KC_0,     KC_BSPC,\
+	KC_ASTR,  KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,   KC_Y,   KC_U,   KC_I,     KC_O,     KC_P,     KC_AT,\
+	KC_EQL,   KC_A,     KC_S,     KC_D,     KC_F,     KC_G,   KC_H,   KC_J,   KC_K,     KC_L,     KC_COLN,  KC_SCLN,\
+	KC_TAB,   KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,   KC_N,   KC_M,   KC_COMM,  KC_DOT,   KC_SLSH,  KC_SFTENT,\
+	FN,       KC_HOME,  KC_MINS,  KC_PLUS,  LOWER,       KC_SPC,      RAISE,  KC_LEFT,  KC_DOWN,  KC_UP,    KC_RGHT\
 ),
 
 /* Lower
@@ -139,33 +136,33 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,   KC_NO,\
     KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,   KC_NO,\
     KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,   KC_NO,\
-    KC_NO,	KC_NO,	KC_NO,  KC_NO,  LOWER,      KC_NO,      RAISE,  KC_NO,  KC_NO,  KC_NO,   KC_NO,\
+    KC_NO,	KC_NO,	KC_NO,  KC_NO,  LOWER,      KC_NO,      RAISE,  KC_NO,  KC_NO,  KC_NO,   KC_NO\
 ),
 
 /* Raise
  * ,-----------------------------------------------------------------------------------.
- * |      | BR - | BR + | WBAK | WFWD | Prev | Play | Next | Mute | Vol- | Vol+ |      |
+ * |      | BR - | BR + |PRNSCR|PRNSEL| WBAK | WFWD | WREF |      |      |      | Mute |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |      |      |      |      |      |      |      |      |      |      |      |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
  * |      |      |      |      |      |      |      |      |      |      |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | WSTP | WREF | WSCH | PAU  |  +   |  -   |   _  |   =  |PRNSCR| Mute | Vol+ | Play |
+ * |      |      |      |      |      |      |      |      |      |      |      | Play |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
- * | WBAK | WHOM | WFWD | SLCK |Lower |             |Raise |PRNSEL| Prev | Vol- | Next |
+ * |      |      |      |      |Lower |             |Raise | Prev | Vol- | Vol+ | Next |
  * `-----------------------------------------------------------------------------------'
  */
 [_RAISE] = LAYOUT_preonic_1x2uC (	    \
-	KC_NO,    KC_BRID,  KC_BRIU,  KC_WBAK,  KC_WFWD,  KC_MPRV,  KC_MPLY,  KC_MNXT,  KC_MUTE,     KC_VOLD,  KC_VOLU,  KC_NO,\
-    KC_BSLS,  KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,       KC_NO,    KC_NO,    KC_PIPE,\
-    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,       KC_NO,    KC_NO,    KC_NO,\
-    KC_WSTP,  KC_WREF,	KC_WSCH,  KC_PAUS,  KC_PPLS,  KC_PMNS,  KC_UNDS,  KC_PEQL,  SGUI(KC_4),  KC_MUTE,  KC_VOLU,  KC_MPLY,\
-    KC_WBAK,  KC_WHOM,	KC_WFWD,  KC_SLCK,  LOWER,         KC_NO,         RAISE,    SGUI(KC_3),  KC_MPRV,  KC_VOLD,  KC_MNXT\
+	KC_NO,    KC_BRID,  KC_BRIU,  SGUI(KC_3),  SGUI(KC_4),  KC_WBAK,  KC_WFWD,  KC_WREF,  KC_NO,    KC_NO,    KC_NO,    KC_MUTE,\
+    KC_BSLS,  KC_NO,    KC_NO,    KC_NO,       KC_NO,       KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,\
+    KC_NO,    KC_NO,    KC_NO,    KC_NO,       KC_NO,       KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,\
+    KC_NO,    KC_NO,    KC_NO,    KC_NO,       KC_NO,       KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_MPLY,\
+    KC_NO,    KC_NO,    KC_NO,    KC_NO,       LOWER,             KC_NO,        RAISE,    KC_MPRV,  KC_VOLD,  KC_VOLU,  KC_MNXT\
 ),
 
 /* Fn
  * ,-----------------------------------------------------------------------------------.
- * |CKTOGG|  !   |  "   |  #   |  $   |  %   |  &   |   '  |  (   |   )  |   |  | Del  |
+ * |CKTOGG|  !   |  "   |  #   |  $   |  %   |  &   |  '   |  (   |   )  |   |  | Del  |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |   *  |      |      |  è   |      |      |      |  ù   |  ì   |  ò   |      | MAIL |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
@@ -173,15 +170,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |      |      |      |      |      |   ñ  |   ¿  |      |      |      |      |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
- * |      |CTRL+L|   -  |   +  |Lower |   MENDL'S   |Raise | HOME | PGDN | PGUP | END  |
+ * |      |CTRL+L|   -  |   +  |SH/LCK|    C B M    |RUN/ST| HOME | PGDN | PGUP | END  |
  * `-----------------------------------------------------------------------------------'
  */
 [_FN] = LAYOUT_preonic_1x2uC (	    \
-	CK_TOGG,  KC_EXLM,     KC_DQUO,  KC_HASH,  KC_DLR,  KC_PERC,  KC_AMPR,  KC_GRV,   KC_LPRN,  KC_RPRN,  KC_PIPE,  KC_DEL,\
-    KC_ASTR,  KC_NO,       KC_NO,    ACCENTE,  KC_NO,   KC_NO,    KC_NO,    ACCENTU,  ACCENTI,  ACCENTO,  KC_NO,    MAIL,\
-    KC_TILD,  ACCENTA,     KC_NO,    KC_NO,    KC_NO,   KC_NO,    KC_NO,	KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,\
-    KC_NO,    KC_NO,  	   KC_NO,    KC_NO,    KC_NO,   KC_NO,    SPAIN1,   SPAIN2,   KC_NO,    KC_NO,    KC_NO,    KC_NO,\
-    KC_NO,    LCTL(KC_L),  KC_MINS,  KC_PLUS,  LOWER,         CBM,          RAISE,    KC_HOME,  KC_PGDN,  KC_PGUP,  KC_END\
+	CK_TOGG,  KC_EXLM,     KC_DQUO,  KC_HASH,  KC_DLR,     KC_PERC,  KC_AMPR,  KC_QUOT,       KC_LPRN,  KC_RPRN,  KC_PIPE,  KC_DEL,\
+    KC_ASTR,  KC_NO,       KC_NO,    ACCENTE,  KC_NO,      KC_NO,    KC_NO,    ACCENTU,       ACCENTI,  ACCENTO,  KC_NO,    MAIL,\
+    KC_TILD,  ACCENTA,     KC_NO,    KC_NO,    KC_NO,      KC_NO,    KC_NO,	   KC_NO,         KC_NO,    KC_NO,    KC_LBRC,  KC_RBRC,\
+    KC_TAB,   KC_NO,  	   KC_NO,    KC_NO,    KC_NO,      KC_NO,    SPAIN1,   SPAIN2,        KC_NO,    KC_NO,    KC_NO,    KC_NO,\
+    FN,       LCTL(KC_L),  KC_MINS,  KC_PLUS,  KC_CAPS,         CBM,           LSFT(KC_ESC),  KC_HOME,  KC_PGDN,  KC_PGUP,  KC_END\
 ),
 
 /* Adjust
@@ -256,12 +253,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             } else {
                 layer_off(_FN);
                 update_tri_layer(_LOWER, _RAISE, _ADJUST);
-            }
-            return false;
-            break;
-        case DBLOO:  // Double Zero for CBM64
-            if (record->event.pressed) {
-                SEND_STRING("00");
             }
             return false;
             break;
