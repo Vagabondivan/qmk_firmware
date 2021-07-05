@@ -101,12 +101,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  |------+------+------+------+------+------+------+------+------+------+------+------|
  | ALTe |      |      |      |      | FISH |   ñ  |      |      | MSBL | MS U | MSBR |
  |------+------+------+------+------+------+------+------+------+------+------+------|
- |      |      |      |      |      |             |      |   ¿  | MS L | MS D | MS R |
+ |      |CTRL+L|CTRL+U|CTRL+W|      |             |      |   ¿  | MS L | MS D | MS R |
  `-----------------------------------------------------------------------------------*/
-    KC_NO,         SGUI(KC_3),  SGUI(KC_4),  GRAVEE,  KC_NO,   KC_NO,  KC_NO,   GRAVEU,   GRAVEI,   GRAVEO,      KC_WH_U,     KC_DEL,
-    LALT(KC_GRV),  GRAVEA,      KC_NO,       KC_NO,   KC_NO,   MAIL,   FISH,    KC_NO,    KC_NO,    KC_NO,       KC_WH_D,     OSL(6),
-    LALT(KC_E),    KC_NO,       KC_NO,       KC_NO,   KC_NO,   SIG,    SPAIN1,  KC_NO,    KC_WH_D,  KC_MS_BTN1,  KC_MS_UP,    KC_MS_BTN2,
-    KC_NO,         KC_NO,       KC_NO,       KC_NO,   KC_TRNS,     KC_SPC,      KC_TRNS,  SPAIN2,   KC_MS_LEFT,  KC_MS_DOWN,  KC_MS_RIGHT
+    KC_NO,         SGUI(KC_3),  SGUI(KC_4),  GRAVEE,      KC_NO,   KC_NO,  KC_NO,   GRAVEU,   GRAVEI,   GRAVEO,      KC_WH_U,     KC_DEL,
+    LALT(KC_GRV),  GRAVEA,      KC_NO,       KC_NO,       KC_NO,   MAIL,   SIG,     KC_NO,    KC_NO,    KC_NO,       KC_WH_D,     OSL(6),
+    LALT(KC_E),    KC_NO,       KC_NO,       KC_NO,       KC_NO,   FISH,   SPAIN1,  KC_NO,    KC_WH_D,  KC_MS_BTN1,  KC_MS_UP,    KC_MS_BTN2,
+    KC_NO,         LCTL(KC_L),  LCTL(KC_U),  LCTL(KC_W),  KC_TRNS,     KC_SPC,      KC_TRNS,  SPAIN2,   KC_MS_LEFT,  KC_MS_DOWN,  KC_MS_RIGHT
 ),
 
 [_LOWER] = LAYOUT_planck_mit(
@@ -300,7 +300,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             break;
         case MAIL:  // Write your email address
             if (record->event.pressed) {
-                SEND_STRING("mail@gmail.com");
+                SEND_STRING("mail.ivanp@gmail.com");
             }
             return false;
             break;
@@ -545,7 +545,7 @@ void rgb_matrix_indicators_user(void) {
 
 uint8_t this_led = host_keyboard_leds();
     if (this_led & (1 << USB_LED_CAPS_LOCK)) {
-        rgb_matrix_set_color(24, 0x00, 0x00, 0xFF);
+        rgb_matrix_set_color(41, 0xFF, 0xFF, 0xFF);
     }
 
   switch (biton32(layer_state)) {

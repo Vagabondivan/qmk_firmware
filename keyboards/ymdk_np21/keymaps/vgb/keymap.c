@@ -19,6 +19,8 @@ enum custom_keycodes {
     RAISE,
     PWD1,
     PWD2,
+    PWD3,
+    PWD4,
     MAIL,
     LNAV1,
     LNAV2,
@@ -34,6 +36,7 @@ enum custom_keycodes {
     DPKG1,
     DPKG2,
     DPKG3,
+    DPKG4,
     APT3,
     APT6,
     APT9,
@@ -79,7 +82,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  [_MACROSA] = LAYOUT_ortho_6x4 (
 
  /*-------------------------------.
-  | PWD1  | PWD2  | MAIL  |       |
+  | PWD1  | PWD2  | PWD3  |       |
   |       |       |       |       |
   |-------+-------+-------+-------|
   | Y     | N     |       | BCKSP |
@@ -94,46 +97,46 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   | LNAV3 |       |RUDDER3|   E   |
   |       |       |       |   N   |
   |-------+-------+-------+   T   |
-  |               |       |   E   |
+  |    CTRL+L     |CTRL+U |   E   |
   |               |       |   R   |
   `-------------------------------*/
 
-   PWD1,           PWD2,           MAIL,           _______,
+   PWD1,           PWD2,           PWD3,           _______,
    KC_Y,           KC_N,           KC_NO,          KC_BSPC,
-   LNAV1,          ZABBIX1,        RUDDER1,        KC_L,
+   LNAV1,          ZABBIX1,        RUDDER1,        LCTL(KC_M),
    LNAV2,          ZABBIX2,        RUDDER2,        KC_ENT,
    LNAV3,          KC_NO,          RUDDER3,        KC_ENT,
-   KC_NO,          KC_NO,          KC_NO,          KC_ENT
+   LCTL(KC_L),     KC_NO,          LCTL(KC_U),     KC_ENT
 ),
 
  [_MACROSB] = LAYOUT_ortho_6x4 (
 
  /*-------------------------------.
-  |  PWD1 | PWD2  | MAIL  |       |
+  |  PWD1 | PWD2  | PWD3  |       |
   |       |       |       |       |
   |-------+-------+-------+-------|
-  |  Y    |  N    |  APT8 | BCKSP |
+  |  Y    | DPKG4 |  APT8 | BCKSP |
   |       |       |       |       |
   |-------+-------+-------+-------|
   |  APT7 | DPKG3 |  APT9 |       |
   |       |       |       |       |
-  |-------+-------+-------+   L   |
-  |  APT4 | DPKG2 |  APT6 |       |
+  |-------+-------+-------+ CTRL+ |
+  |  APT4 | DPKG2 |  APT6 |   M   |
   |       |       |       |       |
   |-------+-------+-------+-------|
   |  APT1 | DPKG1 |  APT3 |   E   |
   |       |       |       |   N   |
   |-------+-------+-------+   T   |
-  |     SYSRST    |  APT5 |   E   |
+  |    CTRL+L     |CTRL+U |   E   |
   |               |       |   R   |
   `-------------------------------*/
 
-   PWD1,           PWD2,           KC_NO,          _______,
-   KC_Y,           KC_N,           APT8,           KC_BSPC,
-   APT7,           DPKG3,          APT9,           KC_L,
+   PWD1,           PWD2,           PWD3,           _______,
+   KC_Y,           DPKG4,          APT8,           KC_BSPC,
+   APT7,           DPKG3,          APT9,           LCTL(KC_M),
    APT4,           DPKG2,          APT6,           KC_ENT,
    APT1,           DPKG1,          APT3,           KC_ENT,
-   APT5,           KC_NO,          SYSRST,         KC_ENT
+   LCTL(KC_L),     KC_NO,          LCTL(KC_U),     KC_ENT
 ),
 
  [_RAISE] = LAYOUT_ortho_6x4 (
@@ -159,7 +162,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   `-------------------------------*/
 
    NUMPAD,         MACROSA,        MACROSB,        _______,
-   KC_NO,          KC_NO,          KC_NO,          BL_TOGG,
+   PWD4,           KC_NO,          KC_NO,          BL_TOGG,
    KC_NO,          KC_NO,          KC_NO,          BL_INC,
    KC_NO,          KC_NO,          KC_NO,          BL_INC,
    KC_NO,          KC_NO,          KC_NO,          BL_DEC,
@@ -240,7 +243,21 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
         case PWD2:  // Notes
             if (record->event.pressed) {
-                SEND_STRING("Blueshark72$");
+                SEND_STRING("Skywalker72");
+            }
+            return false;
+            break;
+
+        case PWD3:  // Notes
+            if (record->event.pressed) {
+                SEND_STRING("MainStreaming123");
+            }
+            return false;
+            break;
+
+        case PWD4:  // Notes
+            if (record->event.pressed) {
+                SEND_STRING("Chrm01");
             }
             return false;
             break;
@@ -346,6 +363,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case DPKG3:  // Notes
             if (record->event.pressed) {
                 SEND_STRING("dpkg -l | grep machinecontroller");
+            }
+            return false;
+            break;
+
+        case DPKG4:  // Notes
+            if (record->event.pressed) {
+                SEND_STRING("dpkg -l | grep nodemanager");
             }
             return false;
             break;

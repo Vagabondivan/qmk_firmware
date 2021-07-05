@@ -189,17 +189,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |      |      |      |      |      |      |      |      |      |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |Qwerty|Gaming|CBM64|      |      |      |      |WipeEP|Debug |Reset |      |
+ * |      |Qwerty|Gaming|CBM 64|      |      |      |      |WipeEP|Debug |Reset |      |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
  * |      |      |      |      |Lower |             |Raise |      |      |      |      |
  * `-----------------------------------------------------------------------------------'
  */
 [_ADJUST] = LAYOUT_preonic_1x2uC (	\
-    KC_NO,    KC_NO,    KC_NO,      KC_NO,      KC_NO,    KC_NO,        KC_NO,      KC_NO,    KC_NO,    KC_NO,      KC_NO,      KC_NO,\
-    KC_NO,    KC_NO,    KC_NO,      KC_NO,      KC_NO,    KC_NO,        KC_NO,      KC_NO,    KC_NO,    KC_NO,      KC_NO,      KC_NO,\
-    KC_NO,    KC_NO,    KC_NO,      KC_NO,      KC_NO,    KC_NO,        KC_NO,      KC_NO,    KC_NO,    KC_NO,      KC_NO,      KC_NO,\
-    KC_NO,    QWERTY,   GAMING,     CBM64,     KC_NO,    KC_NO,        KC_NO,      KC_NO,    EEP_RST,	DEBUG,      RESET,      KC_NO,\
-    KC_NO,    KC_NO,    KC_NO,      KC_NO,      LOWER,    KC_NO,                    RAISE,    KC_NO,    KC_NO,      KC_NO,      KC_NO\
+    KC_NO,  KC_NO,   KC_NO,   KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,    KC_NO,  KC_NO,  KC_NO,\
+    KC_NO,  KC_NO,   KC_NO,   KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,    KC_NO,  KC_NO,  KC_NO,\
+    KC_NO,  KC_NO,   KC_NO,   KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,    KC_NO,  KC_NO,  KC_NO,\
+    KC_NO,  QWERTY,  GAMING,  CBM64,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  EEP_RST,	DEBUG,  RESET,  KC_NO,\
+    KC_NO,  KC_NO,   KC_NO,   KC_NO,  LOWER,  KC_NO,     RAISE,       KC_NO,    KC_NO,  KC_NO,  KC_NO\
 )
 
 };
