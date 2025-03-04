@@ -9,23 +9,19 @@ RGB_MATRIX_EFFECT(SOLID_REACTIVE_NEXUS)
 RGB_MATRIX_EFFECT(SOLID_REACTIVE_MULTINEXUS)
 #        endif
 
-# ifdef RGB_MATRIX_CUSTOM_EFFECT_IMPLS
+#        ifdef RGB_MATRIX_CUSTOM_EFFECT_IMPLS
 
 static hsv_t SOLID_REACTIVE_NEXUS_math(hsv_t hsv, int16_t dx, int16_t dy, uint8_t dist, uint16_t tick) {
     uint16_t effect = tick - dist;
     if (effect > 255) effect = 255;
     if (dist > 72) effect = 255;
     if ((dx > 8 || dx < -8) && (dy > 8 || dy < -8)) effect = 255;
-
 #            ifdef RGB_MATRIX_SOLID_REACTIVE_GRADIENT_MODE
     hsv.h = scale16by8(g_rgb_timer, qadd8(rgb_matrix_config.speed, 8) >> 4) + dy / 4;
 #            else
-    hsv.h = 160 - (dy / 6);  // Start at blue (200) and fade toward green (~120)
+    hsv.h = rgb_matrix_config.hsv.h + dy / 4;
 #            endif
-
-    hsv.s = 255 - abs(dy) * 20;  // Slightly reduce saturation as it spreads
-    hsv.v = 255 - effect;  // Gradually reduce brightness based on the distance from the center
-
+    hsv.v = qadd8(hsv.v, 255 - effect);
     return hsv;
 }
 
