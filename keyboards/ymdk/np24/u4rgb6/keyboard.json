@@ -1,6 +1,7 @@
 {
     "keyboard_name": "NP24 U4 RGB6",
     "manufacturer": "YMDK",
+    "url": "",
     "maintainer": "qmk",
     "usb": {
         "vid": "0x594D",
@@ -8,46 +9,46 @@
         "device_version": "4.0.6"
     },
     "features": {
-        "backlight": true,
         "bootmagic": true,
-        "command": false,
-        "console": false,
-        "extrakey": true,
         "mousekey": false,
+        "extrakey": true,
+        "rgblight": true,
+        "backlight": true,
+        "console": false,
+        "command": false,
         "nkro": false,
-        "rgblight": true
+    },
+    "indicators": {
+        "num_lock": "C6",
+        "on_state": 0
+    },
+    "ws2812": {
+        "pin": "E2"
+    },
+    "rgblight": {
+        "led_count": 6,
+        "animations": {
+            "breathing": true,
+            "rainbow_mood": false,
+            "rainbow_swirl": false,
+            "snake": false,
+            "knight": false,
+            "christmas": false,
+            "static_gradient": true,
+            "rgb_test": false,
+            "alternating": false,
+            "twinkle": false
+        }
+    },
+    "backlight": {
+        "pin": "B7",
+        "levels": 31
     },
     "matrix_pins": {
         "cols": ["F5", "F4", "D3", "D2"],
         "rows": ["B3", "B6", "B2", "B1", "D7", "B4"]
     },
     "diode_direction": "ROW2COL",
-    "backlight": {
-        "pin": "B7",
-        "levels": 31
-    },
-    "rgblight": {
-        "led_count": 6,
-        "animations": {
-            "breathing": true,
-            "rainbow_mood": true,
-            "rainbow_swirl": true,
-            "snake": true,
-            "knight": true,
-            "christmas": true,
-            "static_gradient": true,
-            "rgb_test": true,
-            "alternating": true,
-            "twinkle": true
-        }
-    },
-    "ws2812": {
-        "pin": "E2"
-    },
-    "indicators": {
-        "num_lock": "C6",
-        "on_state": 0
-    },
     "processor": "atmega32u4",
     "bootloader": "atmel-dfu",
     "community_layouts": ["ortho_6x4", "numpad_6x4"],
