@@ -84,12 +84,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  | HUE- | HUE+ | MOD- | MOD+ |
  |      |      |      |      |
  |------+------+------+------|
- |      |  00  |CTRL+L| RST  |
+ |      |  00  |CTRL+L|OSL(2)|
  |      |      |      |      |
  '--------------------------*/
 
   LCTL(KC_L),  LCTL(KC_W),  LCTL(KC_U),  KC_DEL,
-  LCTL(KC_Y),  CTRL_XX,     LCTL(KC_U),  KN_NO,
+  LCTL(KC_Y),  CTRL_XX,     LCTL(KC_U),  KC_NO,
   RGB_TOG,     BL_DOWN,     BL_UP,       BL_TOGG,
   RGB_VAD,     RGB_VAI,     RGB_SAD,     RGB_SAI,
   RGB_HUD,     RGB_HUI,     RGB_RMOD,    RGB_MOD,
