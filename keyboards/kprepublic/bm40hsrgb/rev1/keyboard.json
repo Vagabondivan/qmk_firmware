@@ -16,7 +16,10 @@
         "rgb_matrix": true,
         "console": false,
         "command": false,
-        "nkro": false
+        "nkro": true
+    },
+    "build": {
+        "lto": true
     },
     "qmk": {
         "locking": {
