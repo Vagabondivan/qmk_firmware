@@ -1,1 +1,1 @@
-tap_dance enable = no
+TAP_DANCE_ENABLE = no      # Tapping Keys (pressing more than once)
