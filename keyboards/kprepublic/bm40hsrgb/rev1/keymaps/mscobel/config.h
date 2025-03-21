@@ -40,7 +40,7 @@
 #ifdef RGB_MATRIX_ENABLE
 
 	#define USB_MAX_POWER_CONSUMPTION 500						// Max power consumption via USB port
-	#define DRIVER_LED_TOTAL 47									// Number of active LEDs
+	#define DRIVER_LED_TOTAL 53									// Number of active LEDs
 	#define RGB_MATRIX_MAXIMUM_BRIGHTNESS 180					// Limit to vendor-recommended value
 
 	// enabled only if RGB_MATRIX_FRAMEBUFFER_EFFECTS is defined
