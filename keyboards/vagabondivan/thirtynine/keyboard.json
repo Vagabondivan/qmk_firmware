@@ -10,8 +10,6 @@
         "lto": true
     },
     "features": {
-		
-		
         "bootmagic": true,
         "command": false,
         "console": false,
