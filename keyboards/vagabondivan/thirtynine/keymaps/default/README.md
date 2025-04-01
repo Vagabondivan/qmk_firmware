@@ -24,7 +24,7 @@
 
 ## Momentarily Layers
 
- ### FN ( Numbers - Symbols - Mail - PGUP/PGDN )
+ ### FN ( Numbers - Symbols - PGUP/PGDN )
 <pre>
  /*--------------------------------------------------------------------.
  |  !   |  @   |  #   |  $   |  %   |   ^  |   &  |   *  |   (  |   )  |
