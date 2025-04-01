@@ -1,12 +1,34 @@
 {
     "keyboard_name": "Horus",
     "manufacturer": "Vagabondivan",
-    "maintainer": "qmk",
     "usb": {
+        "device_version": "0.0.1"
         "vid": "0xFEED",
         "pid": "0x5024",
-        "device_version": "1.0.0"
     },
+    "build": {
+        "lto": true
+    },
+    "features": {
+        "bootmagic": true,
+        "command": false,
+        "console": false,
+        "extrakey": true,
+        "mousekey": false,
+        "nkro": false
+    },
+    "qmk": {
+        "locking": {
+            "enabled": true,
+            "resync": true
+        }
+    },
+    "matrix_pins": {
+        "cols": ["F7"],
+        "rows": ["B6", "B5"]
+    },
+    "diode_direction": "COL2ROW",
+    "community_layouts": ["grid_1x2"],
     "layouts": {
         "LAYOUT_grid_1x2": {
             "layout": [
