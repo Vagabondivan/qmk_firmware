@@ -61,6 +61,5 @@ OPT_DEFS += -DBOOTLOADER_SIZE=4096
 #
 #   change yes to no to disable
 #
-BOOTMAGIC_ENABLE = yes      # Virtual DIP switch configuration(+1000)
 TAP_DANCE_ENABLE = yes      # Tapping Keys (pressing more than once)
 ENCODER_ENABLE = yes        # Activate Encoder
