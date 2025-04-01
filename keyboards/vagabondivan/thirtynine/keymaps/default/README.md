@@ -1,6 +1,6 @@
-# vgb_thirtynine ShortLumon layouts
+# vgb_thirtynine Default layouts
 
-![ShortLumon](vgb39.jpg)
+![Default](vgb39.jpg)
 
 <br/>
 <br/>
