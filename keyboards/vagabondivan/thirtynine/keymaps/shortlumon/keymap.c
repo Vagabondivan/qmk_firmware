@@ -22,8 +22,7 @@ enum custom_layers {
     _FN,
 	_LOWER,
 	_RAISE,
-	_ADJUST,
-    _RESET
+	_ADJUST
 };
 
 /* Custom keycodes */
@@ -33,7 +32,6 @@ enum custom_keycodes {
 	LOWER,
 	RAISE,
 	ADJUST,
-    RESET,
     CTRL_XX,
     MAIL_1,
     MAIL_2,
@@ -134,37 +132,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_ADJUST] = LAYOUT_ortho_4x10uC(
 
  /*--------------------------------------------------------------------.
- |      |      |      |      |      |      |      |      |      |      |
- |------+------+------+-------------+------+------+------+------+------|
- |      |      |      |      |      |      |      |      |      |      |
- |------+------+------+------+------+------+------+------+------+------|
- |      |      |      |      |      |      |      |      |      |      |
- |------+------+------+------+-------------+------+------+------+------|
- |      |      |      |      |    RESET    |      |      |      |      |
- `--------------------------------------------------------------------*/
-
-  KC_NO,  KC_NO,  KC_NO,  KC_NO,   KC_NO,  KC_NO,  KC_NO,    KC_NO,     KC_NO,    KC_NO,
-  KC_NO,  KC_NO,  KC_NO,  KC_NO,   KC_NO,  KC_NO,  KC_NO,    KC_NO,     KC_NO,    KC_NO,
-  KC_NO,  KC_NO,  KC_NO,  KC_NO,   KC_NO,  KC_NO,  KC_NO,    KC_NO,     KC_NO,    KC_NO,
-  KC_NO,  KC_NO,  KC_NO,  KC_NO,      OSL(5),      KC_NO,    KC_NO,     KC_NO,    KC_NO
-),
-
-[_RESET] = LAYOUT_ortho_4x10uC(
-
- /*--------------------------------------------------------------------.
  | RSET |      |      |      |      |      |TXT_08|      |TXT_04|TXT_00|
  |------+------+------+------+------+------+------+------+------+------+
  |      |      |      |      |      |      |      |      |TXT_05|TXT_01|
  |------+------+------+------+------+------+------+------+------+------+
  |      |      |      |      |      |      |      |      |TXT_06|TXT_02|
  |------+------+------+------+------+------+------+------+------+------+
- |      |      |      |      | Q W E R T Y |      |      |TXT_07|TXT_03|
+ |      |      |      |      |             |      |      |TXT_07|TXT_03|
  `--------------------------------------------------------------------*/
 
     QK_BOOT,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  TXT_08,  KC_NO,  TXT_04,  TXT_00,
     KC_NO,    KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,   KC_NO,  TXT_05,  TXT_01,
     KC_NO,    KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,   KC_NO,  TXT_06,  TXT_02,
-    KC_NO,    KC_NO,  KC_NO,  KC_NO,      QWERTY,     KC_NO,   KC_NO,  TXT_07,  TXT_03
+    KC_NO,    KC_NO,  KC_NO,  KC_NO,      KC_NO,      KC_NO,   KC_NO,  TXT_07,  TXT_03
 )
 
 };
@@ -252,7 +232,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
         case TXT_04:  // Write a text 4
             if (record->event.pressed) {
-                SEND_STRING("");
+                SEND_STRING("#Blue72Shark#");
             }
              return false;
 
