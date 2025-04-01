@@ -1,0 +1,18 @@
+{
+    "keyboard_name": "Horus",
+    "manufacturer": "Vagabondivan",
+    "maintainer": "qmk",
+    "usb": {
+        "vid": "0xFEED",
+        "pid": "0x5024",
+        "device_version": "1.0.0"
+    },
+    "layouts": {
+        "LAYOUT_grid_1x2": {
+            "layout": [
+                {"x": 0, "y": 0},
+                {"x": 1, "y": 0}
+            ]
+        }
+    }
+}
