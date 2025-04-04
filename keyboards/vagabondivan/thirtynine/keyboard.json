@@ -28,8 +28,8 @@
         "rows": ["GP2", "GP3", "GP4", "GP5"]
     },
     "diode_direction": "COL2ROW",
-    "processor": "rp2040",
-    "bootloader": "rp2040",
+    "processor": "atmega32u4",
+    "bootloader": "atmel-dfu",
     "community_layouts": ["ortho_4x10uC"],
     "layout_aliases": {
         "LAYOUT_preonic_grid": "LAYOUT_ortho_4x10"
